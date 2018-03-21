@@ -23,6 +23,10 @@
                 alert("Enter Valid Email Address");
             }else if(!password.match(passwordRegx)){
                 alert("Create Stronger Password!");
+            }else{
+                var jspcall = "my.jsp?username="+uname+"&name="+name+"&email="+email+"&password="+password;
+                window.location.href = jspcall;
+                console.log("insertion successful");
             }
         }
     </script>
