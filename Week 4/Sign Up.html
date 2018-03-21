@@ -4,6 +4,28 @@
         Mock Tests
     </title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function validate(form){
+            var name = form.name.value;
+            var email = form.email.value;
+            var username = form.username.value;
+            var password = form.password.value;
+            if(name == "" | username == "" | email == "" | password == ""){
+                alert("Complete the Form");
+                return;
+            }
+            var usernameRegx = /^[a-zA-Z0-9]+$/;
+            var emailRegx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var passwordRegx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}/;
+            if(!username.match(usernameRegx)){
+                alert("Enter Valid Username");
+            }else if(!email.match(emailRegx)){
+                alert("Enter Valid Email Address");
+            }else if(!password.match(passwordRegx)){
+                alert("Create Stronger Password!");
+            }
+        }
+    </script>
 </head>
 <body>
     <div id="header"><a href="Home.html">Home</a>&nbsp;<a href="Sign Up.html">Sign Up</a></div>
